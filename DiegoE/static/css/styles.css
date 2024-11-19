@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans';
+    min-height: 100vh; /* Esto asegura que el contenido ocupe al menos el 100% de la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fondo del cuerpo debajo del menú */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh; /* Ajustar según lo necesario */
+    background-image: url('../img/banner.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Para que el fondo quede detrás del contenido */
+}
+
+header {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+nav {
+    display: inline-block;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+nav a:hover {
+    background-color: #44aa15;
+    color: #fdfdfd;
+}
+
+.right-image {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.right-image:hover {
+    transform: scale(1.05);
+}
+
+.encabezado-img {
+    background-image: url(../img/banner.jpeg);
+    background-size: cover;
+    background-position: center 20%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.encabezado-img p {
+    font-size: 18px;
+}
+
+.encabezado-img h1 {
+    font-size: 50px;
+    padding: 15px 0;
+}
+
+.capa {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: #f8f9f8;
+    opacity: 0.0;
+}
+
+/* Estilo de las cajas (parrafos) */
+.parrafo {
+    z-index: 1;
+    width: 700px;
+    height: auto;
+    padding: 25px 25px;
+    font-size: 15px;
+    line-height: 1.8;
+    background: #cacfcc;
+    box-shadow: 1px 5px 25px rgba(11, 143, 61, 0.45);
+    border-radius: 10px;
+    text-align: justify;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+}
+
+.parrafo img {
+    width: 350px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+/* Contenedor de las cajas */
+.contenedor-parrafos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Cada parrafo es una caja individual */
+.contenedor-parrafos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: flex-start;  /* Asegura que las cajas estén alineadas en la parte superior */
+}
+
+/* Cada parrafo es una caja individual */
+.parrafo {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;  /* Esto da el efecto 3D */
+    flex-shrink: 0; /* Evita que las cajas cambien de tamaño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease; /* Añade una transición para un efecto suave */
+}
+
+/* Estilo de la tarjeta */
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+/* Cara frontal */
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la parte posterior cuando está volteada */
+    border-radius: 10px;
+}
+
+/* Cara frontal */
+.card .front {
+    background-color: #44aa15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen de la cara frontal */
+.card .front img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Cara posterior */
+.card .back {
+    background-color: #f8f9f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transform: rotateY(180deg); /* Gira la cara posterior */
+}
+
+/* Efecto de voltear */
+.parrafo.flipped .card {
+    transform: rotateY(180deg); /* Aplica el voltear */
+}
+
+/* Para evitar que el tamaño cambie al voltear la caja */
+.parrafo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Aseguramos que las cajas no se solapen ni cambien de tamaño */
+.parrafo p {
+    margin-bottom: 20px;
+}
+
+/* Ajustes para que las cajas no se muevan ni desacomoden */
+.parrafo:nth-child(odd) {
+    flex-direction: row;
+}
+
+.parrafo:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .contenedor-parrafos {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .parrafo {
+        width: 100%; /* Asegura que las cajas sean de 100% de ancho en móviles */
+        height: auto;
+    }
+
+    .parrafo img {
+        width: 100%;
+    }
+}
+
+/* Estilo general de las cajas */
+.parrafo:nth-child(odd) {
+    flex-direction: row;
+    float: left;
+}
+
+.parrafo:nth-child(even) {
+    flex-direction: row-reverse;
+    float: right;
+}
+
+.parrafo p {
+    margin-bottom: 20px;
+}
+
+/* Estilos para el carrusel */
+.carousel {
+    height: 500px;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto 20px 105px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .right-image {
+        width: 100px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    .parrafo {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .parrafo img {
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
+}
+
+/* Efecto de voltear */
+.flipped .card {
+    transform: rotateY(180deg);
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la parte posterior cuando está volteada */
+    border-radius: 10px;
+}
+
+.card .front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.card .front img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card .back {
+    background-color: #f8f9f8; /* Cambia el color de fondo si lo deseas */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card .back h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card .back form {
+    width: 100%;
+    text-align: left;
+}
+
+.card .back label {
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Contenedor de la tarjeta */
+.parrafo {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Aseguramos que las tarjetas estén alineadas correctamente */
+.card .back form {
+    width: 100%;
+    text-align: left;
+}
+
+/* Estilo footer */
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #44aa15;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(48, 175, 54, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.footer-col .social-links a.facebook {
+    background-image: url('/static/img/facebook.png');
+}
+
+.footer-col .social-links a.twitter {
+    background-image: url('/static/img/x.webp');
+}
+
+.footer-col .social-links a.instagram {
+    background-image: url('/static/img/instagram.png');
+}
+
+.footer-col .social-links a.gmail {
+    background-image: url('/static/img/gmail.png');
+}
+
+.footer-col .social-links a:hover {
+    color: #44aa15;
+    background-color: #ffffff;
+}
+
+/* Media queries para el footer */
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}

@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+        <img src="{% static 'img/logo.png' %}" alt="Logo SENA" class="logo">
+        <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Quienes somos</a>
+        <a href="#">Información</a>
+        <a href="{% url 'login' %}">Iniciar sesión</a>
+        </nav>
+        <img src="{% static 'img/SENA.jpg' %}" alt="Foto Derecha" class="right-image">
+        </div>
+    </header>
+
+    <div class="encabezado-img">
+        <p>Inducción SENA</p>
+        <h1>Sistema de Inducción Dinámico</h1>
+        <p>SID</p>
+    </div>
+
+    <!-- Carrusel de fotos -->
+    <div class="carousel">
+        <div class="slides">    
+        <img src="{% static 'img/carrousel_1.jpg' %}" alt="Imagen 1" class="carrousel-image">  
+        <img src="{% static 'img/carrousel_2.jpg' %}" alt="Imagen 2" class="carrousel-image">
+        <img src="{% static 'img/carrousel_3.jpg' %}" alt="Imagen 3" class="carrousel-image">
+        </div>
+    </div>
+
+    <!-- Aquí comienzan las 6 cajas -->
+<div class="contenedor-parrafos">
+
+    <div class="parrafo">
+        <img src="{% static 'img/imagen_1.jpg' %}" alt="Imagen 1">
+        <p>Texto descriptivo de la imagen 1.</p>
+    </div>
+
+    <div class="parrafo">
+        <img src="{% static 'img/imagen_2.jpg' %}" alt="Imagen 2">
+        <p>Texto descriptivo de la imagen 2.</p>
+    </div>
+
+    <div class="parrafo">
+        <img src="{% static 'img/imagen_3.jpg' %}" alt="Imagen 3">
+        <p>Texto descriptivo de la imagen 3.</p>
+    </div>
+
+    <div class="parrafo">
+        <img src="{% static 'img/imagen_4.jpg' %}" alt="Imagen 4">
+        <p>Texto descriptivo de la imagen 4.</p>
+    </div>
+    
+    <div class="parrafo">
+        <img src="{% static 'img/imagen_5.jpg' %}" alt="Imagen 5">
+        <p>Texto descriptivo de la imagen 4.</p>
+    </div>
+
+    <div class="parrafo">
+        <img src="{% static 'img/imagen_6.jpg' %}" alt="Imagen 6">
+        <p>Texto descriptivo de la imagen 4.</p>
+    </div>
+</div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#" class="facebook"></a>
+                        <a href="#" class="twitter"></a>
+                        <a href="#" class="instagram"></a>
+                        <a href="#" class="gmail"></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+</footer>
+
+    <script src="{% static 'js/carousel.js' %}"></script>
+    <script src="{% static 'js/redirigir.js' %}"></script> 
+
+</body>
+</html>
